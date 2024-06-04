@@ -1,0 +1,2 @@
+NNN_PLUG="p:path_copy"
+export NNN_PLUG="$NNN_PLUG"

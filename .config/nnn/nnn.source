@@ -3,3 +3,4 @@
 export NNN_FIFO=/tmp/nnn.fifo 
 
 source $HOME/.config/nnn/quitcd.bash_zsh
+source $HOME/.config/nnn/plugins.source
