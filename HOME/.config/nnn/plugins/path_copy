@@ -1,38 +1,40 @@
-#!/bin/sh
-usage='(w)sl | (p)ath | (b)asename | (e)xtension :'
+#!/bin/bash
+usage='(b)asename | (e)xtension | (p)ath | (w)sl : '
 
 ### CLIPBOARD TYPE
 wsl_clip="clip.exe"
 wayland="wl-copy"
 
 clip=$wayland
+wsl_path="false"
 ###
 
-function real(){
-    printf "$(readlink -f $1)"
+real(){
+    printf '%s' "$(readlink -f "$1")"
 }
 
-function ext(){
-    printf "$(basename "$1" | cut -d'.' -f2-)"
+ext(){
+    printf '%s' "$(basename "$1" | cut -d'.' -f2-)"
 }
 
-printf "$usage"
-read -n1 ans
+printf '%s' "$usage"
+read -r -n 1 ans
 echo ""
 
 case $ans in
 h)
-    echo "usage" 
+    echo "$usage" 
     ;;
 b)
-    printf "$1" | $clip
+    printf '%s' "$1" | $clip
     ;;
 e)
     ext "$1" | $clip
     ;; 
-r)
+p)
     real "$1" | $clip 
     ;;
 w)
-    wsl-path -w "$(readlink -f $1)" | $clip
+    $wsl_path -w "$(readlink -f "$1")" | $clip
+    ;;
 esac
