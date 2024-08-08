@@ -10,6 +10,15 @@ size = 18.0
 
 [font.normal]
 family = "Iosevka NF"
+style = "Light"
+
+[font.bold]
+family = "Iosevka NF"
+style = "Medium"
+
+[font.italic]
+family = "Iosevka NF"
+style = "Light Italic"
 
 [window]
 decorations = "none"
