@@ -2,5 +2,25 @@
 
 export NNN_FIFO=/tmp/nnn.fifo 
 
+# Plugins
 source $HOME/.config/nnn/quitcd.bash_zsh
 source $HOME/.config/nnn/plugins.source
+
+# Theme
+
+DIR="0C"
+EXE="05"
+REG="07"
+SKJ="03"
+ORP="01"
+HLK="03"
+
+BLK="01"
+CHR="01"
+MIS="01"
+FIF="01"
+SOC="01"
+OTH="01"
+
+export NNN_FCOLORS="$BLK$CHR$DIR$EXE$REG$HLK$SLK$MIS$ORP$FIF$SOC$OTH"
+
